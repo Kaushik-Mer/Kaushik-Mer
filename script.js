@@ -92,12 +92,18 @@ document.addEventListener('selectstart', function (e) {
     e.preventDefault();
 });
 
-// Disable text selection
-document.addEventListener('selectstart', function(e) {
-    e.preventDefault();
-});
-
 // Disable copying
 document.addEventListener('copy', function(e) {
     e.preventDefault();
 });
+
+// Prevent text selection via touch events (mobile)
+document.addEventListener('touchstart', function(e) {
+    if(e.touches.length > 1) { // multi-touch
+        e.preventDefault();
+    }
+}, { passive: false });
+
+document.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+}, { passive: false });

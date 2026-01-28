@@ -1447,3 +1447,16 @@ video {
 .expand-circle {
     will-change: transform, opacity;
 }
+
+body, * {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
