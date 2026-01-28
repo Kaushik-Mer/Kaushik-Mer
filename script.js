@@ -55,24 +55,29 @@ document.addEventListener('keydown', function (e) {
     if (e.key === "F12") {
         e.preventDefault();
     }
+	
     // Ctrl+Shift+I
-    if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === "I") {
+    if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i")) {
         e.preventDefault();
     }
+	
     // Ctrl+Shift+J
-    if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === "J") {
+    if (e.ctrlKey && e.shiftKey && (e.key === "J" || e.key === "j")) {
         e.preventDefault();
     }
+	
     // Ctrl+U (View source)
-    if (e.ctrlKey && e.key.toUpperCase() === "U") {
+    if (e.ctrlKey && (e.key === "U" || e.key === "u")) {
         e.preventDefault();
     }
+	
     // Ctrl+S (Save page)
-    if (e.ctrlKey && e.key.toUpperCase() === "S") {
+    if (e.ctrlKey && (e.key === "S" || e.key === "s")) {
         e.preventDefault();
     }
+	
     // Ctrl+Shift+C (Inspect element)
-    if (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === "C") {
+    if (e.ctrlKey && e.shiftKey && (e.key === "C" || e.key === "c")) {
         e.preventDefault();
     }
 });
@@ -84,5 +89,15 @@ document.addEventListener('dragstart', function (e) {
 
 // Optional: Prevent selecting text
 document.addEventListener('selectstart', function (e) {
+    e.preventDefault();
+});
+
+// Disable text selection
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+
+// Disable copying
+document.addEventListener('copy', function(e) {
     e.preventDefault();
 });
